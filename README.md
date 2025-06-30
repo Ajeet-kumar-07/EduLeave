@@ -39,7 +39,7 @@ A secure and scalable backend system for managing student leave applications in 
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/yourusername/eduleave-backend.git
+   git clone https://github.com/Ajeet-kumar-07/eduleave-backend.git
    cd eduleave-backend 
    ```
 2. **install dependencies:**
