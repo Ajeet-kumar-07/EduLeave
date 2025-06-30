@@ -1,0 +1,182 @@
+{
+  "info": {
+    "name": "EduLeave API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_postman_id": "eduleave-collection-001"
+  },
+  "item": [
+    {
+      "name": "Register (Student)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Ajeet Jatwar\",\n  \"email\": \"ajeet@student.com\",\n  \"password\": \"123456\",\n  \"role\": \"student\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/auth/register",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "auth",
+            "register"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Login (Student)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"ajeet@student.com\",\n  \"password\": \"123456\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/auth/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Apply Leave (Student)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer <TOKEN>"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"reason\": \"Family emergency\",\n  \"fromDate\": \"2025-07-01\",\n  \"toDate\": \"2025-07-03\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/leaves",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "leaves"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get My Leaves (Student)",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer <TOKEN>"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/leaves/my",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "leaves",
+            "my"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Pending Leaves (Admin)",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer <TOKEN>"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/leaves/pending",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "leaves",
+            "pending"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Update Leave Status (Admin)",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer <TOKEN>"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"status\": \"approved\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/leaves/:id",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "leaves",
+            ":id"
+          ]
+        }
+      }
+    }
+  ]
+}
